@@ -5,6 +5,7 @@ const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+var http = require('http');
 
 const app = express();
 
@@ -36,6 +37,14 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+
+var server = http.createServer(app);
+server.listen(3000, '0.0.0.0');
+server.on('listening', function() {
+    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+});
+/*
 app.listen(3000, () => {
     console.log('app now listening for requests on port 3000');
 });
+*/

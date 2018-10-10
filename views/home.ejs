@@ -1,57 +1,243 @@
-<!DOCTYPE html>
+<!  DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>OAuth Tutorials</title>
-        <style>
-            body{
-                font-family: arial;
-                margin: 0;
-            }
-            nav{
-                background: #ff5353;
-                padding: 20px 10px;
-            }
-            nav ul{
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 0;
-            }
-            nav li{
-                list-style-type: none;
-                display: inline-block;
-                margin: 0 10px 0 0;
-            }
-            nav a{
-                color: #fff;
-                font-size: 18px;
-                background: rgba(255,255,255,0.2);
-                text-decoration: none;
-                padding: 10px;
-                display: block;
-            }
-            main, header{
-                max-width: 960px;
-                margin: 30px auto;
-                padding: 0 10px;
-                color: #333;
-            }
-        </style>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="/auth/logout">Logout</a></li>
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/">Homepage</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Net Ninja OAuth Tut's</h1>
-            <h2>Homepage</h2>
-        </header>
-        <main>
-            <p>Probably the best OAuth tutorials on the planet :)</p>
-        </main>
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+            <title>OAuth Tutorials</title>
+      </head>
+
+
+
+
+      <style>
+     .decrease-margin
+       {
+        margin: 0%;
+        margin-bottom: 0%;
+       }
+  
+
+     @media screen and (max-width: 600px) {
+      .container { width: 100% !important;}
+}
+
+       </style>
+
+
+
+
+      <script>
+  // date picker      
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, 'mmm dd, yyyy');
+  });
+
+
+//for buy and selector
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, 'hover');
+  });
+</script>
+      
+
+
+
+
+      <body>
+          <nav>
+              <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Coincafe</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                      <li><a class="waves-effect waves-light btn" href="#"><i class="material-icons left">cloud</i>login</a></li>
+                      <li><a class="waves-effect waves-light btn" href="#"><i class="material-icons left">cloud</i>signup</a></li>
+                </ul>
+              </div>
+          </nav>
+      
+         
+           <div class="container ">
+         <div class="row">
+          <div class="col s6 flow-text" style="padding:0%"><b>Portfolio</b></div>  
+        </div>
+       
+        
+         <div class="row card white darken-1 black-text" id="add_transaction" >        
+                
+                    
+                    
+                     <div class="col s12  m6 offset-m3 l6 offset-l3 ">
+                        <div class="  decrease-margin row center ">
+                            <b>Add Transaction</b>   
+                          </div>
+                          <form id="add_form" class="decrease-margin">
+                          
+                            <div class="row  decrease-margin">                          
+                              <div class=" input-field col s12  decrease-margin" >
+                                <label   for="coin_name">Coin Name</label>
+                               <input id="coin_name" type="text">                              
+                              </div>    
+                            </div>                      
+                            <div class="row ">
+                                <div class="input-field col s6 decrease-margin">
+                             <label >Type of Transaction</label> 
+                            </div>
+                            <div class="input-field col s6 decrease-margin">
+                            <label for="date">Date</label>
+                          </div>
+                            </div>
+                            <div class="row  decrease-margin"">                                                              
+                             <div class="input-field col s6  decrease-margin"">                           
+                                <select class="type" >
+                                <option value="1" selected>Buy</option>
+                                <option value="2">Sell</option>                              
+                              </select>
+                              </div>                            
+                              <div class="input-field col s6 decrease-margin">
+
+                                  <input placeholder="mm/dd/yyyy" id="date" type="text"  class="datepicker">                                
+                              </div> 
+                              </div>
+                              <div class="row ">
+                                  <div class="input-field col s6 decrease-margin">
+                               <label >Price</label> 
+                              </div>
+                              <div class="input-field col s6 decrease-margin">
+                              <label for="date">Volume</label>
+                            </div>
+                              </div>
+                              <div class="row decrease-margin" ">                                                              
+                                    <div class="input-field col s6 decrease-margin">
+                                      
+                                        <input placeholder="123.45" id="coin_price" type="text">                                         
+                                    </div>                      
+                                   <div class="input-field col s6 decrease-margin">
+                                    
+                                      <input  placeholder="123.45"  id="coin_volume" type="text">                                   
+                                   </div> 
+
+                            </div>
+                     
+                              <button class="btn waves-effect waves-light red col s12" style="margin-bottom:10px" type="submit" name="action">Add Transaction
+                                </button>
+                             
+
+                             
+
+                           </form>                                                       
+                        </div>                                                                      
+                    </div>                             
+                   
+        
+
+
+          <div class="row">        
+            
+                  <div class="card white darken-1 ">
+                     <div class="card-content black-text">
+                    <div class="row center">
+                    <h6><b><span>$1540</span></b>
+                      <br>
+                      <small>Total Portfolio value</small> 
+                      <br>
+                      <small>24H CHANGE:  $-13  |  -0.8%</small> 
+                      </h6>
+                    </div>
+                    <div class="row">
+                    <div class="col s4 center">
+                        <h6><span>$2,368</span> <br>
+                          <small>TOTAL COST</small> 
+                        </h6>
+                    </div>
+                    <div class="col s4 center">
+                       <h6><span>$-812</span> <br>
+                        <small>TOTAL PROFIT</small> 
+                      </h6>
+                    </div>
+                    <div class="col s4 center">
+                        <h6><span> -34%</span> <br>
+                          <small>TOTAL PROFIT</small> 
+                        </h6>
+ 
+                    </div>
+                    </div>
+                    
+                     </div>   
+                   </div>
+          </div>
+     
+
+
+ 
+
+
+
+
+
+
+          
+            <div class="row" >
+                
+                  <div class="card white darken-1 ">
+                     <div class="card-content black-text">
+                       <span class="card-title ">My Coins</span>
+                       <table class="highlight ">
+                             <thead>
+                               <tr>
+                                 <th>Coin Namee</th>
+                                <th>Price</th>
+                                <th>24h change</th>
+                                 <th>Amount</th>
+                                 <th>Cost</th>
+                                 <th>Value</th>
+                                 <th>Profit</th>
+                                 <th>Profit %</th>
+                             
+                               </tr>
+                             </thead>
+                             <tbody>
+                               <tr>
+                                 <td>John</td>
+                                 <td>Doe</td>
+                                 <td>john@example.com</td>
+                               </tr>
+                               <tr>
+                                 <td>Mary</td>
+                                 <td>Moe</td>
+                                 <td>mary@example.com</td>
+                               </tr>
+                               <tr>
+                                 <td>July</td>
+                                 <td>Dooley</td>
+                                 <td>july@example.com</td>
+                               </tr>
+                               <tr>
+                                     <td>John</td>
+                                     <td>Doe</td>
+                                     <td>john@example.com</td>
+                                   </tr>
+                                   <tr>
+                                     <td>Mary</td>
+                                     <td>Moe</td>
+                                     <td>mary@example.com</td>
+                                   </tr>
+                                   <tr>
+                                     <td>July</td>
+                                     <td>Dooley</td>
+                                     <td>july@example.com</td>
+                                   </tr>
+                             </tbody>
+                           </table>
+                         </div>
+                     </div>   
+                   </div>
+              
+                    
     </body>
 </html>
